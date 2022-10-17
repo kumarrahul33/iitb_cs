@@ -1,0 +1,72 @@
+.footer-text {
+    color: bisque;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+
+.spacing_for_icons {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+.good-font {
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.vertical-spacing {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+/* for text effect */
+.intro-font {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 8vw;
+    font-weight: bolder;
+    color: #fc9403;
+    /*text-shadow: 10px 10px 5px #17a2b8;*/
+
+}
+
+.img-border {
+    border-radius: 12px;
+    border: 3vh;
+    box-shadow: 20px 20px 20px grey;
+    
+}
+
+.content-font {
+
+    font-family: cursive;
+    font-weight: lighter;
+    font-size: larger;
+    color: black;
+    text-shadow: 5px 5px 3px burlywood;
+}
+
+.content-border {
+    /*border: 1px outset bisque;*/
+    box-shadow: 20px 20px 20px grey;
+    border-radius: 12px; 
+    text-align: start;
+}
+
+.fill {
+  height: 65vh;
+}
+
+table th {
+    width: auto !important;
+}
+
+.hobbies_style {
+    font-family: cursive;
+    font-size: larger;
+    align-items: center;
+    border-radius: 12px;
+    border: solid;
+    text-align: center;
+    text-shadow: 5px 5px 3px burlywood;
+}
