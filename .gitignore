@@ -1,8 +1,4 @@
 fltkGame/fltk
-ssl_lab/git_md
-ssl_lab/temp
-ssl_lab/sed_awkOutlab/final_submission/cs251-chitting
-ssl_lab/
 *.o
 *.gch
 *.pdf
@@ -12,3 +8,5 @@ ssl_lab/
 *.out
 *.png
 *.cxx
+*.mp4
+*.jpg
