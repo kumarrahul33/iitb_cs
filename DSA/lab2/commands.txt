@@ -1,0 +1,1 @@
+alias runit='python3 sampler.py; g++ dictionaryTest.cpp; ./a.out > results.txt ; python3 plot.py'

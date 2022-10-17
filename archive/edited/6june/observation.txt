@@ -1,0 +1,23 @@
+ackermann:
+    the ackermann is an easy to implement function which uses recursion.
+    Since it uses recursion it has the problem of stackoverflow.
+    same thing is recomputed many times which puts extra load on the stack and the processer.
+
+ackermann using memoisation:
+    the above problem can be solved using memoisation.
+    the basic idea is to store the value once computed and use it when it is required later without recomputing it.
+    this is achieved using a 2d list "arr" which stores the ackermann values.
+
+**********************************
+PLEASE USE python (not python3 or python3.5)
+**********************************
+textprocessing:
+    this is implemented by first loading the words of the files into separate lists then doing the following operations.
+    1.the individual list of words is acted upon by a filter function which filters all the non-vowels in every words.
+    2.the resulting list is acted upon by a map function which maps each filtered word to its length.
+    3.the list of lists(which contains the vowel count of each word of each file) is acted upon by a reduce function which 
+      reduces each list to its average value.
+    4.finally the we use sort to return the top averages of vowel count.
+
+optional.py:
+    it uses a similar method as above and also returns an additional average word length for each file 

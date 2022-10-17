@@ -1,0 +1,59 @@
+* Facts:
+
+father(he,dodo).
+father(dick,jojo).
+mother(mary,dodo).
+mother(tery,jojo).
+likes(john,mary).
+likes(mary,cherry).
+likes(john,food).
+likes(mary,food).
+likes(don,movies).
+
+* Goals:
+
+?- likes(mary,X)
+
+	prolog will provide one solution for X,
+	and ask whether you want all solutions, or you want to step through other solns
+
+* Conjunctions in Goals:
+
+?- likes(john,X),likes(mary,X)
+
+Variables: X was a variable
+	- use a variable when you can't name an object
+	- any name beginning with capital letter is a variable
+
+
+* Rules
+
+likes(john,X):-likes(X,movies).
+
+the rule is:  john likes X if X likes movies
+
+
+married(X,Y):-mother(X,K),father(Y,K).
+married(X,Y):-married(Y,X).  <--- this causes recursion if you want all solutions!
+
+
+married(X,Y):-mother(X,K),father(Y,K).
+married(X,Y):-mother(Y,K),father(X,K). <--- this captures symmetric relation, but contradicts
+			with above rule, same with or conjunction 
+
+
+married(X,Y):-mother(X,K),father(Y,K);mother(Y,K),father(Y,K).
+
+Ored conjuncts are independent rules. 
+
+
+* conjunction:
+
+	,	AND
+	;	OR
+
+
+
+
+
+

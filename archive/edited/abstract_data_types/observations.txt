@@ -1,0 +1,22 @@
+# Things observed in prolog
+- we define rules and facts in declarative programming
+- the language find the rule which is applicable to the curent input and applies it.
+- we do not how the program will be implemented.
+
+# program
+-to implement mylast function we defined two rules. 
+    1. the first was the base case rule that the last element of a singleton list is that element itself
+    2. the second rule is that the last element of a list is equal to the last element of its tail.
+
+-to implemnt pushback.
+    1. i defined a helper function called cutList which removes the last element of the list.
+    2. the main rule here was that the last element of the appended list is the element to be appended and the rest of the 
+        list (cutList) is same as the initial list.
+-to implement palindrome.
+    1. i checked if the reversed list is equal to the list.
+
+-to implement myappend.
+    1. i first wrote the base case when a single element is appended to the list.
+    2. then i wrote the recursion rule that when we append something to the list then the result is the same as :
+        1. we pushback the head of the list to the result list.
+        2. we append the new list.

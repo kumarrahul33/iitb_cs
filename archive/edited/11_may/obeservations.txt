@@ -1,0 +1,60 @@
+to build the executable use the following command:
+    impl1:
+        g++ -c impl1.cpp; g++ -c reusablelib.cpp; g++ -c main.cpp;  g++ main.o reusablelib.o impl1.o -o build1;
+    impl2:
+        g++ -c impl2.cpp; g++ -c reusablelib.cpp; g++ -c main.cpp;  g++ main.o reusablelib.o impl2.o -o build2;
+
+to run the program:
+    ./build1 filename1 filename2
+
+Design of the Program:
+    similarity.h:
+        this contains the declaration of the functions which are later defined the the reusablelib.cpp file
+    reusablelib.cpp:
+        this the functions which are used in both impl1 and imple2
+            myclass::myclass -- constructor of the class declared in similarity.h: this initialise the class and sets the value of the 
+                arrays file1 and file2 which contains the words of the files.
+            
+            myclass::checkSimilar -- this function takes in two strings as input and returns a double between 0 and 1 based on their 
+                similarity.
+            
+            exceptions handling:
+                to handle the exception i made a class called exceptions and an instance of this class with proper initialization is thrown 
+                at the time of exception.
+                currently it handles the following exceptions:
+                    when file1 is empty
+                    when file2 is empty
+                
+                exceptions::exceptions -- this the constructor of the class
+                exceptions::msg -- this is the function which prints appropriate statements at the time of exceptions.
+
+impl1:
+    
+    similarity:
+        It contains a subclass of the "myclass" named similarity. The logic of the copy checker is declared here.
+        measureSimilarity:
+            it compare each element of file1(which was populated with words of first file by the myclass constructor), with each element of file2 and add
+            appropriate number to the final percentage based of the similarity.
+
+            if the word matches exactly with the word of the file2 the the contribution is maximum and if it does not matches with any words significantly 
+            then no contribution is taken. Even if the word doesn't exactly matches with the any of the word of other file but matches significantly, then also
+            we take it into account.
+
+    checksimilarity:
+        it initialises similairty class and calls the measureSimilarity function for that object and then returns it
+
+impl2:
+    
+    similarity:
+        It contains a subclass of the "myclass" named similarity. The logic of the copy checker is declared here.
+        measureSimilarity:
+            it compare each element of file1(which was populated with words of the first file by the myclass constructor), with corresponding element of file2
+            and add appropriate number to the final percentage.
+
+            if the word matches exactly with the word of the file2 the contribution is maximum and if it does not matches with any words significantly 
+            then no contribution is taken. Even if the word doesn't exactly matches with any of the words of other file but matches significantly, then also
+            we take it into account.
+
+    checksimilarity:
+        it initializes similarity class and calls the measureSimilarity function for that object and then returns it
+

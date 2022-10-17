@@ -1,0 +1,4 @@
+to compile programs
+fltk-config --compile filename.cpp
+
+

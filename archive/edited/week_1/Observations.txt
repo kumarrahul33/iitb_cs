@@ -1,0 +1,3 @@
+Procedural language code is difficult to understand while Object-Oriented language code is easy to understand.
+Procedural language code is difficult to write and debug while Object-Oriented language code is easy to debug and write.
+Object-Oriented language code is much cleaner than Procedural language code.

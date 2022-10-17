@@ -1,0 +1,8 @@
+all the verbs subjects and objects are first loaded in their respective list and
+then we generate sentences by the following way:
+	a recursive call is made in which all the sentences corresponding to the 
+	an objects are printed and then the function call is made by passing the 
+	object list with the used object removed.
+	this way all the combination of the objects, subjects and verbs are used 
+	to make sentences.
+

@@ -1,0 +1,14 @@
+to draw the circle design :
+    1. The Circle Design is made by first inheriting the Fl_widget then redefing the draw function to our convinience. This is done so that 
+       our class has the full access to the Fl_widget public functions and therefore act as a upgraded widget.
+    2. I made a polar to cartesian coordinate system converter using the class called "Coordinates".
+    3. It has also the capability of shifting the orign and converting the with respect to that orign. When new orign is not given 
+       then the Coordinates object is initiallised with the default orign.
+    4. The CircleDesign class is made such that it is movable, means we can shift the design to appropriate location.
+    5. We also had to make a suitable constructor for this class.
+
+Triangular tiles
+    1. with similar approach as the circle design i made triangular designs and assigned random color to them.
+    2. then i inheried the tridesign class to tridesignInv class which is used to make inverted triangular designs because these classes
+       were very similar.
+    3. i then put the triangles and the circle design in place and the rangoli was ready.

@@ -1,0 +1,5 @@
+protected: 
+	//variable and functions in this are available to the 
+	subclasses (classes to which this class has been 
+	extended.
+	// main cannot access it.

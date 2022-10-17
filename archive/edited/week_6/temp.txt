@@ -1,0 +1,7 @@
+if(m>86) j= 6.28318/(float)(m-86);
+    else if(m>54) j= 6.28318/(float)(m-54);
+         else if(m>36) j= 6.28318/(float)(m-36);
+              else if(m>18) j= 6.28318/(float)(m-18); 
+                   else if(m>10) j= 6.28318/(float)(m-10);
+                        else if(m>2) j= 6.28318/(float)(m-2);
+                             else if(m>0) j= 6.28318/(float)(m);

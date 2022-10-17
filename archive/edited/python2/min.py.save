@@ -1,0 +1,5 @@
+def min(l):
+	if (len(l) == 1):
+		return l[0]
+	tmp = l[0]
+	

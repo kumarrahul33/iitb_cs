@@ -1,0 +1,11 @@
+substring.cpp
+    substring_failed1.cpp : the substring is bigger than the main string.
+    substring_failed2.cpp : the given substring was not present in the main string.
+
+str2int.cpp
+    str2int_failed1.cpp : the string contained not numerical values.
+    str2int_failed2.cpp : the number contained in the string was out of range of the int data type.
+
+collection.cpp
+    collection_failed1.cpp : the size of the collection "a" was initialised with a negative value.
+    collection_failed2.cpp : the code was pushing more values than the capacity of the Collection. 

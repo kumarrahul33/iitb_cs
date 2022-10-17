@@ -1,0 +1,88 @@
+why use higher order functions?
+
+ attempt-- send in as a parmeter and call
+    -- but we can call any function from inside a body of another
+     -- all functions in the file are visible to the file 
+		and there is no need to pass them as parameters to call
+                      them
+
+    -- to use a function defined later! -- better define it earlier,
+    it's your own code, why complicate it?!!
+
+            we adding a new feature into the language... reason
+              has to be good enought--powerful--- not just to
+              cater to bad programs! -- we want a powerful feature
+              from abstractions point of view--- paradigm point of
+                view --what is the conpceptual idea?
+
+
+   -- same set of steps (body of a higher order function) on
+    different --- this just a generic observatio on what
+    the HO func does.. but not a motivation for why it should do that!
+
+
+
+  -- find a derivative of any function given to it
+       you can still do this with a function with string parameter
+            which is processed via symbolic reducation
+
+  --  sort function--
+		pass a function that compares two elements
+                     but hardly there any variations in that compare function
+                         since there are no types in language
+                sorting of different types of elements need different
+                   ways to compare.. e.g. comparing two structs may
+                    need to compare all elements in it.
+
+                   sort (l, dumbcomparator)
+                   sort (stud_list, jee_stud_comparator)
+                   sort (pairp, paircomparator)
+
+				we know what we are passing in
+					we choose appropriate comparator 
+						for it.
+  -- to extend a function
+		call g and then do something more
+		-- no need to pass as a parameter, you can directly call!
+                       f(x) { return (g(x)+1)}
+
+  - ML applications
+           different hypothesis funcs, optimization funcs, evaluation
+
+  -- business application
+
+            tax rule functions
+
+ it is not in the paradigm to replace the simple function call!
+
+ it is not there as some syntactic sugar .. just to improve
+        the look and feel, or to address some syntactic limitations
+
+
+  but it's there as  a powerful abstraction to address higher order
+    variations .. the body uses different functions at different times
+   so we use parameters which accompdate that difference
+
+
+     in OOP: dynamic binding and polymorphism.  we used inheritance
+     and defined the variants,  and based on which object you choose,
+      that corresponding method was called! ==> variants
+
+
+  The idea of variants comes in FP paradigm through higher order functions
+
+
+   --> improve reusability, without having to hardcode the variations
+   via a series of if-else statements-- leave the decision to runtime-
+   let a function arrive through parameter, and we can handle it!
+
+   the body is a generic piece of code, which can take in 
+    the variants successfully
+
+
+
+
+
+ 
+ 
+

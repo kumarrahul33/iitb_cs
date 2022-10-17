@@ -1,0 +1,31 @@
+atoms.cpp
+    1. the original code was very badly intended. It was very difficult to understand the code and the control flow was not clear.
+    2. all the code was dumped into a single fucntion called f making it even difficult to see how to code was working.
+    3. there was also the use of an unnecessary global variable call m.
+
+    Changes Made:
+    1. I intended the code appropiatlely to see whats going on with the program.
+    2. I eliminated the unnecessary global variable.
+    3. when use of parts of code became clear i separated the code doing a particular function into different function.
+        i made three functions 
+        1. readData, this function handled reading of the data from the given file and putting it into the variable provided.
+        2. angleElec, this function gave the value of angle between the eletron to the main drawing function.
+        3. boxMaker, this is used by the main funtion to make lines(orbits).
+        4. drawAtom, this is the main drawing function of the program.
+
+alchemy.cpp
+    1. all the code except the classes, structs, and a few other functions was put into the main making it difficult to understand the code.
+    2. important and garbage variables all were put in the same place in the main making the code even more unreadable.
+
+    Changes made:
+    1. I first broke the code with respect to functionality and encapsulated the each functionality into either a class or a fucntion whichever appropriate.
+    2. UserMgmt:
+       I made a class called UserMgmt which deals with all the things related to a user, such as validation of a user or adding a new user 
+       and related things. I made a class because user management is a big task and multiple functions are involved in it. So it would be better to encapsulate
+       the functions of UserMgmt further into functions called addNewUser and validateUser but making them private so that they don't get accidently called.
+       the function getUser returns the name of the user playing and is a public function.
+    3. getThings:
+       thing was an important array in the program and populating the array with information was an big task. So i encapsulated this functionality into the function
+       called getThings.
+    4. startGame:
+        this is the function which encapsulate how the game will proceed.

@@ -1,0 +1,28 @@
+operators
+	are functions
+		x * x
+		is the same as add (x,x)
+
+	convenient way to express ideas as mathematical operations			
+	they can be 
+		unary  -- one operator  !
+		binary -- take two operands + - / *   []
+
+	several standard operators already in the language
+		mathematical  - + * / ...
+		logical    &&, ||, ...,&, |
+		array indexing  []
+		input output  <<  >> 
+		comparison  ==
+	
+ 	many of which can be overloaded -- means we can give a new
+		meaning to them on new types of operands not known
+		to the language!!
+
+	
+	operators have precedence rules
+
+		c + a * b
+
+
+

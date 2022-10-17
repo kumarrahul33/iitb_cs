@@ -1,0 +1,28 @@
+
+1.  The core idea
+
+procedural: set of procedures, global store accessible to all
+oop: sets of member functions, each set of member function has its own shared store
+
+procedural: p1,p2,p3....pn == can use one common state (global)
+oop: fragment the space into smaller units, each protected fron the other
+
+ --> the idea of class is born
+
+2. Class
+     state (set of variables)
+     member funtions -- all of which can access the same state  => abstraction
+
+    one can create many instances (objects, a value) of a given class
+    class gives  a description (like a mould, type description)
+
+    protection mechanism: public, private and protected accesses ==> encapsulation
+
+    build new classes from existing ones by extending existing ==> inheritance
+
+
+    if we have a program written for an old class, it will work with a new
+     class without any change in that program ==> polymorphism
+
+
+

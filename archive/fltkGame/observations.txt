@@ -1,0 +1,44 @@
+*******************************************************************************************************************************************
+I AM REALLY SORRY I COULD NOT FIX SOME BUGS.. FLTK WAS A VERY NEW LIBRARY FOR ME AND DEBUGGING WAS TAKING TOO MUCH TIME AND ENERGY AND THE 
+DEADLINE WAS APPROACHING.
+********************************************************************************************************************************************
+
+HOW TO PLAY:
+    1.YOU HAVE TO CLICK ON THE BATSMAN WITH PERFECT TIMING TO HIT A SHOT
+    2.THE BLOCKS ON THE RIGHT SHOW THE MINIMUM HEIGHT TO GET THE RESPECTIVE RUN; CROSSING THE HIGHEST MEANS SIX AND THE LOWEST 
+      CORRESPONDS TO 1 RUN.
+Design:
+    Classes used:
+        MyRectangle
+            used to make the wickets and the "run demarcating" blocks.
+        
+        Ball
+            #used to make the ball. 
+
+            #All the core functionality of the game is handled in the ball as it is the most complex of all the objects and motion 
+             and logic both are involved in it.
+            
+            #movement of the ball:
+                ->ball is moved by utilizing the function of the fltk called add_timeout.
+
+                ->I first created a ball objects and then after a certain amount of time i call a functon(timeractions) to 
+                    1.delete the ball widget and 
+                    2.create a new ball widget corresponding to the next frame and also 
+                    3.cleanly wiping the impressions of the deleted ball.
+                    
+                ->this way the we don't pile the memory with the undeleted ball widgets and also the ball keeps moving.
+
+            #ball logic:
+                all the logic are mainly handled in the gameplay function of the ball class which gets called after every frame.
+                logic involves bouncing of ball, throwing of the new ball when required,getting out etc.
+
+            #also used in updating scores
+
+        Batsman:
+            #it is used in making the batsman.
+            #it also recieves the click from the user and if the timing is correct the ball is hit.
+                ->this has been achieved by the use of a global variable hitit.
+
+
+
+    

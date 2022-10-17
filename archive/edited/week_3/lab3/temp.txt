@@ -1,0 +1,8 @@
+cout << "iPhone12mini" << endl;
+    _iPhone12mini.camera();
+    _iPhone12mini.charging();
+    _iPhone12mini.display();
+    _iPhone12mini.frontCamera();
+    _iPhone12mini.processor();
+    cout << endl;
+

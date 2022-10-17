@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/rahul/Desktop/iitb_cs/DSA/lab3'
+g++ main.cpp -o interact
+make: Leaving directory '/home/rahul/Desktop/iitb_cs/DSA/lab3'
+ 

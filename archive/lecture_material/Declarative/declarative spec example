@@ -1,0 +1,13 @@
+Examples of declarative specifications
+
+--------------------------------------------------
+pushback(e,nillist)=cons(e,nilllist)
+pushback(e,l)=cons(head(l),pushback(e,tail(l)))
+---------------------------------------------------
+
+length(nillist)=0
+length(l)=1+length(tail(l))
+
+----------------------------------------------------
+
+
