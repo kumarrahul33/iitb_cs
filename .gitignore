@@ -10,3 +10,5 @@ fltkGame/fltk
 *.cxx
 *.mp4
 *.jpg
+**/__pycache__/
+*.pyc

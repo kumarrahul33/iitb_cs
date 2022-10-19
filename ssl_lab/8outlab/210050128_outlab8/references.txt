@@ -1,0 +1,5 @@
+https://www.geeksforgeeks.org/python-pandas-dataframe-mean/?id=discusshttps://www.statology.org/pandas-select-rows-based-on-column-values/
+https://www.geeksforgeeks.org/different-ways-to-create-pandas-dataframe/?id=discuss
+https://sparkbyexamples.com/pandas/pandas-get-column-average-mean/
+https://www.w3schools.com/python/pandas/pandas_dataframes.asp
+
