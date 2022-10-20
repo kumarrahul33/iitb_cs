@@ -1,0 +1,182 @@
+#ifndef PRINT_JOURNEY_CPP
+#define PRINT_JOURNEY_CPP
+
+#ifndef STD_HEADERS_H
+#include "std_headers.h"
+#endif
+
+using namespace std;
+
+int maxStopOvers = 0; 
+int maxTransitTime = 0;
+int destination;
+StationAdjacencyList* &adjacency;
+listOfObjects<listOfObjects<TrainInfoPerStation *>*>* final_journeys;
+
+
+
+bool condition(TrainInfoPerStation* t, int arrival_time, int day, int maxTransitTime){
+// if it doesn't run on that day then return false simply
+// check the condition of maxTriansitTime on a station
+  if(!t -> daysOfWeek[day]){
+    return false;
+  }
+
+  else if(t->depTime - arrival_time >= maxTransitTime){
+      return false;
+  }
+
+  else{
+    return true;
+  }
+  
+}
+
+listOfObjects<TrainInfoPerStation*>* append(listOfObjects<TrainInfoPerStation *>* curr_journey,TrainInfoPerStation * train){
+  listOfObjects<TrainInfoPerStation *>* new_train = new listOfObjects<TrainInfoPerStation *>(train);
+  new_train -> prev = curr_journey;
+  return new_train;
+}
+
+int get_arrival_time(listOfObjects<StationConnectionInfo*>* from_stations,int prevStn,int journey_number){
+  listOfObjects<StationConnectionInfo *>* ptr = from_stations;
+  while (ptr != nullptr)
+  {
+    listOfObjects<TrainInfoPerStation *>* journey = ptr -> object -> trains;
+    while (journey != nullptr)
+    {
+      if (journey->object->journeyCode == journey_number)
+      {
+        return journey->object->arrTime;
+      }
+      journey = journey->next;
+    }
+   ptr = ptr -> next; 
+  }
+  
+  cout << "error in finding the arrival time" << endl;
+  return 0;
+}
+
+void journey_append(listOfObjects<TrainInfoPerStation*>* journey, listOfObjects<listOfObjects<TrainInfoPerStation*>*>* final_journeys){
+  listOfObjects<listOfObjects<TrainInfoPerStation*>*>* new_journey = new listOfObjects<listOfObjects<TrainInfoPerStation *>*>(journey);
+  listOfObjects<listOfObjects<TrainInfoPerStation *>*>* temp = final_journeys -> next;
+  final_journeys -> next = new_journey;
+  temp -> prev = new_journey;
+  new_journey -> next = temp;
+}
+
+void specialDFS(int stn, int prevStn,int day,listOfObjects<TrainInfoPerStation *>* curr_journey,int level=0)
+  {
+
+  int arrival_time;
+  if (level >= maxStopOvers) return;
+
+  if (level)
+  {
+    arrival_time = get_arrival_time(adjacency[stn].fromStations,prevStn, curr_journey->object->journeyCode);
+  }
+  else{
+    arrival_time = INT32_MAX;
+  }
+  
+
+  if (stn == destination)
+  {
+    journey_append(curr_journey,final_journeys);
+    return;
+  }
+
+
+  listOfObjects<StationConnectionInfo*>* connection = adjacency[stn].toStations;
+  // int arrival_time = get_arrival_time(adjacency[stn].fromStations,prevStn, curr_journey->object->journeyCode);
+
+  while (connection ->next != nullptr)
+  {
+    int curr_to_stn = connection->object->adjacentStnIndex;
+    listOfObjects<TrainInfoPerStation *>* train = connection -> object -> trains;
+
+    while (train != nullptr)
+    {
+      if (condition(train->object,arrival_time, day, maxTransitTime)){
+        specialDFS(connection->object->adjacentStnIndex,stn,day,append(curr_journey,train->object),level+1);
+      }
+    }
+     
+  }
+  
+   
+  //do special dfs
+  //somehow keep track of the journeys we are following
+}
+// DFS(stn,day,curr_journey=list(stn),destination,final_journeys,level=0)
+//  arrival_time = curr_journey.
+//  if stn is destination:
+// 		final_journeys.journey_append(journey)
+// 	if level >= maxStopOvers:
+// 			return  
+// 	for connection in adjacency[station].toStn:
+// 			for train in connection:
+// 				if condition(train,day,maxTansittime,train):
+// 					DFS(connection.adjacentStn,append(curr_journey,train),level+1)
+
+// BFS(node)
+// 	q.push(node) 
+//  visited[node] = true 
+// 	while not q.empty:
+// 		process(q.top)
+// 		
+//  	for e in neighbour[node]:
+//  		if not visited[e]	
+// 				visited[e] = true
+// 				q.push(e) 	
+// 			
+// 		q.pop()
+
+// 
+// 				
+
+
+// BFS(int source,int destination)
+// 	q.push(source) 
+//  visited[source] = true 
+// 	int level = 0
+// 	while not q.empty:
+// 		if level >= maxStopOvers:
+// 			break
+// 		process(q.top)
+// 		
+//  	for e in toStations:
+//  		if condition(e):	
+// 				q.push(e) 	
+// 		level++	
+// 		
+// 		q.pop()
+
+void Planner::printPlanJourneys(string srcStnName, string destStnName, int maxStopOvers, int maxTransitTime)
+{
+
+  // insert your code here
+
+  //listOfObjects<TrainInfoPerStation *> availableJourneys = new ;
+  //source_stn = stnNameToIndex[srcStnName];
+  //desin_stn = stnNameToIndex[srcStnName];
+
+  //specialDFS(source_stn,maxStopOver) 
+  cout << "This function is to be implemented by you." << endl;
+
+  // Whenever you need to print a journey, construct a
+  // listOfObjects<TrainInfoPerStation *> appropriately, and then
+  // use printStationInfo that we had used in Lab 7.
+  // printStationInfo is a private member function of
+  // the Planner class. It is declared in planner.h and implemented in
+  // planner.cpp
+
+
+  
+  return;
+}
+
+
+
+#endif
