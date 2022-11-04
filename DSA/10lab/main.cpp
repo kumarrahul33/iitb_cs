@@ -34,12 +34,12 @@ using namespace std;
 
 int main(int argc, char **argv) {
 
-  if (argc != 2) {
+  if (false) {
     cerr << "Usage: " << argv[0] << " <log_file_name>" << endl;
     return -1;
   }
 
-  Planner *myPlanner = new Planner(argv[1]);
+  Planner *myPlanner = new Planner("log");
   if (myPlanner == nullptr) {
     cerr << "Memory allocation failure." << endl;
     return -1;
