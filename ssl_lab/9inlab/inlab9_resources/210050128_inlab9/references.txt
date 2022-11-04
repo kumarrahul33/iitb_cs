@@ -1,0 +1,2 @@
+https://www.biochemithon.in/python-tutorials/sqlite3/how-to-import-csv-file-into-an-sqlite-database-table-using-python/
+https://www.geeksforgeeks.org/how-to-import-a-csv-file-into-a-sqlite-database-table-using-python/
